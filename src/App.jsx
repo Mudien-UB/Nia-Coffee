@@ -6,6 +6,8 @@ import AboutPage from './pages/AboutPage';
 import ContactPage from './pages/ContactPage';
 import NotFoundPage from './pages/NotFoundPage';
 import Footer from './components/organisms/Footer';
+import { Navigate } from 'react-router';
+import LoadingPage from './pages/LoadingPage';
 
 
 function App() {
@@ -16,12 +18,20 @@ function App() {
       component: <HeroPage />,
     },
     {
+      route: '/home',
+      component: <Navigate to="/" />,  
+    },
+    {
       route: '/about',
       component: <AboutPage />,
     },
     {
       route: '/contact',
       component: <ContactPage />,
+    },
+    {
+      route: '/loading',
+      component: <LoadingPage />,
     },
 
   ]
