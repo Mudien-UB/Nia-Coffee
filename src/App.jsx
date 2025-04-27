@@ -3,9 +3,28 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import HeroPage from './pages/HeroPage';
 import Header from './components/organisms/Header';
 import AboutPage from './pages/AboutPage';
+import ContactPage from './pages/ContactPage';
+import NotFoundPage from './pages/NotFoundPage';
+import Footer from './components/organisms/Footer';
 
 
 function App() {
+
+  const pages = [
+    {
+      route: '/',
+      component: <HeroPage />,
+    },
+    {
+      route: '/about',
+      component: <AboutPage />,
+    },
+    {
+      route: '/contact',
+      component: <ContactPage />,
+    },
+
+  ]
 
   return (
     <Router>
@@ -13,10 +32,14 @@ function App() {
         
         <main className="flex-grow">
           <Routes>
-            <Route path="/" element={<HeroPage />} />
-            <Route path="/about" element={<AboutPage />} />
+            {pages.map((page, index) => (
+              <Route key={index} path={page.route} element={page.component} />
+            ))}
+            <Route path="*" element={<NotFoundPage />} />
           </Routes>
         </main>
+        
+        <Footer />
     </Router>
   )
 }

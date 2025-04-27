@@ -1,33 +1,8 @@
 import React from "react";
-import ProductCard from "../components/molecules/ProductCard";
+import BestProductContainer from "../components/organisms/BestProductContainer";
 
 export default function HeroPage() {
-    const productBestSeller = [
-        {
-            id: 1,
-            title: "Espresso",
-            price: 20000,
-            image: "/images/menu.png",
-        },
-        {
-            id: 2,
-            title: "Cappuccino",
-            price: 25000,
-            image: "/images/menu.png",
-        },
-        {
-            id: 3,
-            title: "Latte",
-            price: 30000,
-            image: "/images/menu.png",
-        },
-        {
-            id: 4,
-            title: "Mocha",
-            price: 35000,
-            image: "/images/menu.png",
-        },
-    ];
+
 
     return (
         <section className="w-full min-h-screen bg-gradient-to-br from-amber-50 to-amber-100 flex flex-col justify-center items-center gap-10 px-4 py-12">
@@ -56,20 +31,8 @@ export default function HeroPage() {
                 </button>
             </div>
 
-            <div className="max-w-6xl h-1/2 bg-gradient-to-t from-amber-100 to-transparent p-6 rounded-xl">
-                <h2 className="text-5xl font-bold underline underline-offset-8 text-amber-900 mb-10">Best Seller</h2>
-                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mt-10 px-5">
-                    {productBestSeller.map((product) => (
-                        <ProductCard
-                            key={product.id}
-                            title={product.title}
-                            price={product.price}
-                            image={product.image}
-                        />
-                    ))}
-                </div>
-            </div>
-
+            <BestProductContainer />
+            
         </section>
     );
 }
