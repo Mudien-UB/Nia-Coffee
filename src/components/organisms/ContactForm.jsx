@@ -55,7 +55,6 @@ export default function ContactForm() {
             e.preventDefault();
             alert('Form submitted successfully!');
 
-            // Here you can add your form submission logic
             console.log('Form Data:', formData);
         }
 

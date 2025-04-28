@@ -8,6 +8,7 @@ import NotFoundPage from './pages/NotFoundPage';
 import Footer from './components/organisms/Footer';
 import { Navigate } from 'react-router';
 import LoadingPage from './pages/LoadingPage';
+import ProductsListPage from './pages/ProductsListPage';
 
 
 function App() {
@@ -28,6 +29,10 @@ function App() {
     {
       route: '/contact',
       component: <ContactPage />,
+    },
+    {
+      route: '/products',
+      component: <ProductsListPage />,
     },
     {
       route: '/loading',

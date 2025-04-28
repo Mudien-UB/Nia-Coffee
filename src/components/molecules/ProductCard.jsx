@@ -3,7 +3,7 @@ import { BiStar } from 'react-icons/bi';
 import { BsBookmarkStarFill } from 'react-icons/bs';
 import { FaCartPlus } from 'react-icons/fa';
 
-function ProductCard({ title = 'unknown', price = 0, image = '/images/menu.png' }) {
+function ProductCard({ title = 'unknown', price = 0, category = 'unknown' ,image = '/images/menu.png' }) {
   return (
     <div className="w-64 bg-amber-50 rounded-lg shadow-lg p-5 hover:shadow-xl transition-shadow duration-300 ease-in-out overflow-hidden flex flex-col">
       <div className="w-full">
@@ -14,7 +14,8 @@ function ProductCard({ title = 'unknown', price = 0, image = '/images/menu.png' 
         />
       </div>
       <div className="flex-1 p-4 flex flex-col justify-between">
-        <h2 className="text-lg font-semibold text-amber-900 mb-2">{title}</h2>
+        <h2 className="text-lg font-semibold text-amber-900">{title}</h2>
+        <h2 className='text-md font-black text-amber-800/70 mb-2'>{category}</h2>
         <h3 className="text-xl font-bold text-amber-700">
           {new Intl.NumberFormat('id-ID', {
             style: 'currency',

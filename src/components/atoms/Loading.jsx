@@ -1,30 +1,13 @@
 import React from 'react'
+import { AiOutlineLoading, AiOutlineLoading3Quarters } from 'react-icons/ai'
+import { VscLoading } from 'react-icons/vsc'
 
-export default function Loading() {
+export default function Loading({  className}) {
   return (
-    <div className="flex space-x-4">
-      <div 
-        className="h-12 w-12 bg-amber-400 rounded-lg animate-bounce transition-all ease-in-out opacity-0" 
-        style={{ animation: 'bounce 1s ease-in-out infinite, fadeIn 1s forwards' }}></div>
-      <div 
-        className="h-12 w-12 bg-amber-500 rounded-lg animate-bounce transition-all ease-in-out opacity-0" 
-        style={{ animation: 'bounce 1s ease-in-out infinite 0.2s, fadeIn 1s forwards 0.2s' }}></div>
-      <div 
-        className="h-12 w-12 bg-amber-900 rounded-lg animate-bounce transition-all ease-in-out opacity-0" 
-        style={{ animation: 'bounce 1s ease-in-out infinite 0.4s, fadeIn 1s forwards 0.4s' }}></div>
+    <div className={` w-max h-max flex flex-col justify-center items-center relative ${className}`}>
+      <AiOutlineLoading3Quarters className="animate-spin text-amber-600 text-6xl absolute" />
+      <AiOutlineLoading className="animate-[spin_2s_linear_infinite_reverse] 100 text-amber-600 text-4xl transform rotate-180 absolute" />
     </div>
   )
 }
 
-const styles = `
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-}
-`
-
-document.head.insertAdjacentHTML('beforeend', `<style>${styles}</style>`)

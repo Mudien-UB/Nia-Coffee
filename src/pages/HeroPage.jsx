@@ -1,8 +1,10 @@
 import React from "react";
 import BestProductContainer from "../components/organisms/BestProductContainer";
+import { useNavigate } from "react-router-dom";
 
 export default function HeroPage() {
 
+    const navigate = useNavigate();
 
     return (
         <section className="w-full min-h-screen bg-gradient-to-br from-amber-50 to-amber-100 flex flex-col justify-center items-center gap-10 px-4 py-12">
@@ -26,13 +28,15 @@ export default function HeroPage() {
                     </h3>
                 </div>
 
-                <button className="mt-8 px-8 py-3 bg-amber-600 hover:bg-amber-700 text-white font-semibold rounded-full shadow-lg hover:shadow-xl transition-all duration-500 transform hover:-translate-y-1 ease-in-out">
+                <button
+                    onClick={() => navigate('/products')}
+                    className="mt-8 px-8 py-3 bg-amber-600 hover:bg-amber-700 text-white font-semibold rounded-full shadow-lg hover:shadow-xl transition-all duration-500 transform hover:-translate-y-1 ease-in-out">
                     Order Your Coffee
                 </button>
             </div>
 
             <BestProductContainer />
-            
+
         </section>
     );
 }
