@@ -40,8 +40,8 @@ A personal project landing page for a café website, built using modern React JS
 
 ```bash
 # Clone the repository
-git clone https://github.com/yourusername/nia-caffee.git
-cd nia-caffee
+git clone https://github.com/Mudien-UB/Nia-Coffee.git
+cd Nia-Coffee
 
 # Install dependencies
 npm install
